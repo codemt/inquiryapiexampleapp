@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Inquiry;
 class InquiryController extends Controller
 {
     /**
@@ -14,6 +14,11 @@ class InquiryController extends Controller
     public function index()
     {
         //
+        $all = Inquiry::all();
+
+
+        return $all->toJson();
+
     }
 
     /**
@@ -35,6 +40,7 @@ class InquiryController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
