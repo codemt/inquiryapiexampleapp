@@ -17,7 +17,7 @@ class InquiryController extends Controller
         $all = Inquiry::all();
 
 
-        return $all->toJson();
+        return response()->json($all);
 
     }
 
@@ -40,6 +40,21 @@ class InquiryController extends Controller
     public function store(Request $request)
     {
         //
+
+        //return $request->phone;
+
+            $new = new Inquiry();
+
+            $new->name = $request->name;
+            $new->interest = $request->interest;
+            $new->email = $request->email;
+            $new->phone = $request->phone;
+
+            $new->save();
+
+
+           return response()->json($new);
+
         
     }
 
